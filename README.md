@@ -69,26 +69,26 @@ Tick each topic off once you can explain it without notes. The "Must know" facts
 
 📝 Revision notes: [Domain 1: Fundamentals of gen AI](notes/domain-1-fundamentals-of-gen-ai.md)
 
-- [ ] **Describe core generative AI concepts and use cases**
+- [ ] **Describe core generative AI (gen AI) concepts and use cases**
   <br>Defining core concepts (AI, NLP, machine learning, generative AI, foundation and multimodal foundation models, diffusion models, prompt tuning, prompt engineering, large language models); describing ML approaches (supervised, unsupervised, reinforcement); the ML lifecycle stages (data ingestion, preparation, training, deployment, management) and Google Cloud tools for each; choosing a foundation model for a use case (modality, context window, security, availability, cost, performance, fine-tuning); business use cases where gen AI can create, summarize, discover, and automate.
   - 📖 Lesson: [Generative AI Concepts: Foundation Models, LLMs, and Business Use Cases](https://www.savemycert.com/revision/gcp-generative-ai-leader/generative-ai-concepts-foundation-models-llms/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
-  - Must know: Generative AI is a branch of machine learning that creates new content; traditional ML classifies or predicts.
-  - Must know: A foundation model is pretrained on broad data and adapted to many tasks; an LLM is a foundation model specialized in language.
+  - Must know: Generative AI is a branch of machine learning that creates new content; traditional ML classifies or predicts, and one organization often needs both.
+  - Must know: NLP covers non-generative language tasks too: a model that only tags or scores text is NLP and ML, not gen AI.
 - [ ] **Describe how various data types are used in gen AI and the business implications**
   <br>Explaining the characteristics and importance of data quality and data accessibility (completeness, consistency, relevance, availability, cost, format); differences between structured and unstructured data with real-world examples; differences between labeled and unlabeled data.
   - 📖 Lesson: [Data Types in Gen AI: Quality, Structured vs Unstructured, Labeled Data](https://www.savemycert.com/revision/gcp-generative-ai-leader/gen-ai-data-types-quality-structured-unstructured/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
-  - Must know: Gen AI output quality is bounded by data quality: incomplete, inconsistent, or irrelevant data produces confident but wrong answers.
-  - Must know: Data quality and accessibility have six exam characteristics: completeness, consistency, relevance, availability, cost, and format.
+  - Must know: Gen AI output quality is bounded by data quality, and a generative model fails silently: bad data produces confident, plausible, wrong answers rather than errors.
+  - Must know: Poor data quality costs trust, introduces bias, inflates preparation cost and delay, misleads decisions, and leaves use cases out of reach.
 - [ ] **Identify the core layers of the gen AI landscape and the business implications**
   <br>The core layers of the gen AI landscape and their business implications: infrastructure, models, platforms, agents, and applications.
   - 📖 Lesson: [The Five Layers of the Gen AI Landscape and What They Mean for Business](https://www.savemycert.com/revision/gcp-generative-ai-leader/gen-ai-landscape-layers-infrastructure-models-agents/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
   - Must know: The gen AI landscape has five layers: infrastructure, models, platforms, agents, and applications, and each builds on the layer below.
-  - Must know: Infrastructure (TPUs, GPUs, AI Hypercomputer, Google Cloud data centers) should be consumed from a cloud provider, not built.
+  - Must know: Infrastructure (TPUs, GPUs, AI Hypercomputer with its optimized software and consumption models, Google Cloud data centers) is rented from a cloud provider, not built or bought.
 - [ ] **Identify the use cases and strengths of Google's foundation models**
   <br>Use cases and strengths of Google's foundation models: Gemini, Gemma, Imagen, and Veo.
   - 📖 Lesson: [Google's Foundation Models: Gemini, Gemma, Imagen, and Veo Explained](https://www.savemycert.com/revision/gcp-generative-ai-leader/google-foundation-models-gemini-gemma-imagen-veo/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
-  - Must know: Google's four named foundation models are Gemini (multimodal reasoning), Gemma (lightweight open models), Imagen (image generation), and Veo (video generation).
-  - Must know: Gemini is natively multimodal with a long context window, making it the choice for reasoning, conversation, document analysis, code, and mixed-input tasks.
+  - Must know: Google's four named foundation models are Gemini (multimodal reasoning), Gemma (lightweight open models), Imagen (image generation and editing), and Veo (video generation).
+  - Must know: Gemini is natively multimodal with a long context window; one long-context request keeps links between distant parts of a document that chunking would lose.
 
 ### Domain 2: Google Cloud's gen AI offerings
 
@@ -100,22 +100,22 @@ Tick each topic off once you can explain it without notes. The "Must know" facts
   <br>Google's AI-first approach and innovation; the enterprise-ready AI platform (responsible, secure, private, reliable, scalable); the comprehensive AI ecosystem; the benefits of Google Cloud's open approach; AI-optimized infrastructure (hypercomputer, custom TPUs, GPUs, data centers); data control (security, privacy, governance, first-party models, customizable solutions, agents); democratizing AI development (low-code/no-code tools, pre-trained models, APIs).
   - 📖 Lesson: [Google Cloud's Gen AI Strengths: Platform, Infrastructure, and Openness](https://www.savemycert.com/revision/gcp-generative-ai-leader/google-cloud-gen-ai-strengths-platform/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
   - Must know: Google's AI-first approach and research heritage — including the Transformer architecture — create a short path from breakthrough to product, so customers get state-of-the-art capability and a strong roadmap.
-  - Must know: Enterprise-ready means five qualities: responsible, secure, private, reliable, and scalable — match the quality to the concern the exam scenario stresses.
+  - Must know: Enterprise-ready means five qualities: responsible, secure, private, reliable and scalable — match the quality to the concern a scenario stresses.
 - [ ] **Describe how Google Cloud's prebuilt gen AI offerings enable AI powered work**
   <br>Functionality, use cases, and business value of the Gemini app and Gemini Advanced (Gems); Gemini Enterprise (Gemini Notebook API, multimodal search, custom agent capabilities); and Gemini for Google Workspace.
   - 📖 Lesson: [Prebuilt Gen AI at Work: Gemini App, Gemini Enterprise, and Workspace](https://www.savemycert.com/revision/gcp-generative-ai-leader/gemini-app-enterprise-workspace-prebuilt-ai/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
-  - Must know: Prebuilt offerings are finished products — fastest time to value, no ML skills required — and the entry point of Google Cloud's gen AI spectrum.
-  - Must know: The Gemini app is a standalone multimodal assistant for individuals; Gemini Advanced adds the most capable models and Gems.
+  - Must know: Prebuilt offerings are finished, Google-maintained products — fastest time to value, no ML skills required — and the entry point of Google Cloud's gen AI spectrum.
+  - Must know: The Gemini app is a standalone multimodal assistant for individuals; its premium tier (Gemini Advanced, now Google AI Pro) adds the most capable models and longer context for very long material.
 - [ ] **Describe how Google Cloud's gen AI offerings improve the customer experience**
   <br>Google Cloud's external search offerings (Agent Search on Gemini Enterprise Agent Platform, Google Search); and the Customer Engagement Suite (Conversational Agents, Agent Assist, Conversational Insights, Contact Center as a Service).
   - 📖 Lesson: [Improving Customer Experience with Agent Search and Customer Engagement Suite](https://www.savemycert.com/revision/gcp-generative-ai-leader/google-cloud-customer-engagement-agent-search/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
   - Must know: Google Cloud improves customer experience through two families: external search offerings (Agent Search, grounding with Google Search) and the Customer Engagement Suite.
-  - Must know: Agent Search, on the Gemini Enterprise Agent Platform, embeds Google-quality generative search — with prebuilt RAG and grounded, cited answers — into a company's own sites and apps.
+  - Must know: Agent Search, on the Gemini Enterprise Agent Platform, embeds Google-quality generative search — with prebuilt RAG and grounded, cited answers — into a company's own sites and apps for customers; Gemini Enterprise serves employees.
 - [ ] **Describe how Google Cloud empowers developers to build with AI**
   <br>Agent Platform (Model Garden, Agent Search, Agent Platform AutoML); Google Cloud's RAG offerings (prebuilt RAG with Agent Search, RAG APIs); and using Agent Platform to build custom agents.
   - 📖 Lesson: [How Google Cloud Empowers Developers: Agent Platform and RAG](https://www.savemycert.com/revision/gcp-generative-ai-leader/google-cloud-agent-platform-rag-developers/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
   - Must know: Agent Platform is Google Cloud's unified environment for discovering models, grounding them in company data, and building, deploying, and managing gen AI agents.
-  - Must know: Model Garden is a curated library of Google, open, and partner foundation models — its value is informed model choice under one set of enterprise controls.
+  - Must know: Model Garden offers managed Gemini models as a service, open-weight models such as Gemma to download and self-host, and partner models such as Claude billed and governed through your own Google Cloud project.
 - [ ] **Define the purpose and types of tooling for gen AI agents**
   <br>How agents use tools (extensions, functions, data stores, plugins) to interact with the external environment; relevant Google Cloud services and pre-built AI APIs for agent tooling (Cloud Storage, databases, Cloud Functions, Cloud Run, Agent Platform, Speech-to-Text, Text-to-Speech, Translation, Document AI, Cloud Vision, Video Intelligence, Natural Language); when to use Agent Studio vs Google AI Studio.
   - 📖 Lesson: [Gen AI Agent Tooling: Extensions, Functions, Data Stores, and Plugins](https://www.savemycert.com/revision/gcp-generative-ai-leader/gen-ai-agent-tooling-extensions-functions/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
@@ -131,18 +131,18 @@ Tick each topic off once you can explain it without notes. The "Must know" facts
 - [ ] **Describe how to proactively overcome foundation model limitations**
   <br>Common limitations of foundation models (data dependency, knowledge cutoff, bias, fairness, hallucinations, edge cases); recommended practices to address them (grounding, retrieval-augmented generation, prompt engineering, fine-tuning, human in the loop); continuous monitoring and evaluation (automatic upgrades, KPIs, security patches, versioning, performance tracking, drift monitoring, Agent Platform Feature Store).
   - 📖 Lesson: [Overcoming Foundation Model Limitations: Grounding, RAG, and HITL](https://www.savemycert.com/revision/gcp-generative-ai-leader/overcome-foundation-model-limitations-grounding-rag/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
-  - Must know: Foundation model limitations all stem from data dependency: the model only knows what its training data contained, up to its knowledge cutoff.
-  - Must know: Grounding connects model output to verifiable sources; RAG implements it by retrieving relevant enterprise content and inserting it into the prompt before generation.
+  - Must know: Data dependency is about coverage (what was never in training data, such as private documents); the knowledge cutoff is about time (what happened after collection). Both are closed by grounding or RAG.
+  - Must know: Models often invent rather than decline when knowledge is missing, so cutoff gaps usually surface as hallucinations.
 - [ ] **Describe prompt engineering techniques and how they drive better results**
   <br>Defining prompt engineering and its significance with LLMs; prompting techniques and use cases (zero-shot, one-shot, few-shot, role prompting, prompt chaining); advanced techniques and when to use them (chain-of-thought, ReAct).
   - 📖 Lesson: [Prompt Engineering Techniques: Few-Shot, Role, and Chain-of-Thought](https://www.savemycert.com/revision/gcp-generative-ai-leader/prompt-engineering-techniques-few-shot-chain-of-thought/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
   - Must know: Prompt engineering is deliberately designing the model's input — instruction, context, format, examples — and is the fastest, cheapest way to improve gen AI output.
-  - Must know: Zero-shot means no examples, one-shot means one, few-shot means several; add examples when output misses your format or standard, and use the fewest that work.
+  - Must know: Prompting is iterative: check each refined output against every requirement, and when a fix drops something the prompt never stated, add it explicitly rather than reverting.
 - [ ] **Identify grounding techniques and their use cases**
   <br>Grounding in LLMs and differentiating first-party enterprise data, third-party data, and world data; how retrieval-augmented generation (RAG) affects output; Google Cloud grounding offerings (pre-built RAG with Agent Search, RAG APIs, grounding with Google Search); sampling parameters (token count, temperature, top-p, safety settings, output length).
   - 📖 Lesson: [Grounding Techniques: RAG, Google Search, and Sampling Settings](https://www.savemycert.com/revision/gcp-generative-ai-leader/grounding-techniques-rag-google-search/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
   - Must know: Grounding connects LLM responses to verifiable data sources, reducing hallucinations and keeping answers current without retraining the model.
-  - Must know: First-party data is what your organization owns, third-party data is acquired from external providers, and world data is broad public knowledge such as Google Search results.
+  - Must know: First-party data is what your organization creates and owns, third-party data is acquired from external providers, and world data is broad public knowledge such as Google Search results — the category follows the data's origin, not the app's audience.
 
 ### Domain 4: Business strategies for a successful gen AI solution
 
@@ -150,21 +150,21 @@ Tick each topic off once you can explain it without notes. The "Must know" facts
 
 📝 Revision notes: [Domain 4: Business strategies for a successful gen AI solution](notes/domain-4-business-strategies-for-a-successful-gen-ai-solution.md)
 
-- [ ] **Describe the Google Cloud-recommended steps to implement a transformational gen AI solution**
+- [ ] **Describe the Google Cloud-recommended steps to successfully implement a transformational gen AI solution**
   <br>Types of gen AI solutions (text, image, code generation, personalized needs); key factors that influence gen AI needs (business requirements, technical constraints); choosing the right solution for a business need; steps to integrate gen AI into an organization; techniques to measure impact.
   - 📖 Lesson: [Implementing a Transformational Gen AI Solution: The Google Cloud Steps](https://www.savemycert.com/revision/gcp-generative-ai-leader/implement-gen-ai-solution-google-cloud-steps/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
   - Must know: A transformational gen AI solution starts from a business need and works backward to the technology, never the reverse.
-  - Must know: The main solution types are text generation, image generation, code generation, and personalized user experiences, and each maps to distinct business problems.
-- [ ] **Define secure AI and its importance in protecting AI systems**
+  - Must know: The main solution types are text generation, image generation, code generation, and personalized user needs; personalization means content generated from each person's own data, not ranking existing items or sending everyone their own copy of input-only output.
+- [ ] **Define secure AI and its importance in protecting AI systems from malicious attacks and misuse**
   <br>Security throughout the ML lifecycle; the purpose and benefits of Google's Secure AI Framework (SAIF); Google Cloud security tools (secure-by-design infrastructure, IAM, Security Command Center, workload monitoring).
   - 📖 Lesson: [Secure AI and SAIF: Protecting AI Systems on Google Cloud](https://www.savemycert.com/revision/gcp-generative-ai-leader/secure-ai-saif-framework-google-cloud/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
-  - Must know: Secure AI means protecting an AI system's data, models, infrastructure, and interactions from attacks and misuse across the entire ML lifecycle.
-  - Must know: Know the core threats conceptually: data poisoning corrupts training data, prompt injection manipulates a deployed model through its inputs, model theft steals the model asset, and evasion and leakage round out the list.
+  - Must know: Secure AI means protecting an AI system's data, models, infrastructure, and interactions from attacks and misuse across the entire ML lifecycle; it is not AI for security, responsible AI, or perimeter hardening alone.
+  - Must know: Data poisoning lives in training data and is fixed by clean, verified data; evasion crafts inputs against a trained model at inference and survives retraining.
 - [ ] **Describe the importance of responsible AI in business**
   <br>The importance of responsible AI and transparency; privacy considerations (privacy risks, data anonymization and pseudonymization); implications of data quality, bias, and fairness; accountability and explainability in AI systems.
   - 📖 Lesson: [Responsible AI in Business: Transparency, Privacy, Bias, and Fairness](https://www.savemycert.com/revision/gcp-generative-ai-leader/responsible-ai-transparency-bias-fairness/?utm_source=github&utm_medium=readme&utm_campaign=gcp-generative-ai-leader-study-guide)
-  - Must know: Responsible AI is a business requirement, not just an ethical ideal — it protects trust, brand reputation, and regulatory standing.
-  - Must know: Google's AI Principles commit to socially beneficial AI that avoids unfair bias, is safe, accountable to people, and privacy-first — but the deploying business always retains accountability for its own use.
+  - Must know: Responsible AI is a business requirement, not just an ethical ideal: it protects trust, brand reputation, and regulatory standing.
+  - Must know: Google's AI Principles (revised February 2025) rest on three principles: bold innovation, responsible development and deployment, and collaborative progress, together. They guide Google's own work and tooling; the deploying business keeps accountability and legal liability for its use.
 
 ## How to study for GenAI Leader
 

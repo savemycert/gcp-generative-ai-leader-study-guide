@@ -17,14 +17,14 @@ This domain covers why foundation models go wrong and what fixes each failure, t
   - Fine-tuning: continue training on curated examples to learn vocabulary, style, or task patterns. Needs quality data and engineering effort.
   - Human in the loop (HITL): people review or approve before output takes effect. Required for medical, financial, legal, and fairness-sensitive decisions; corrections become evaluation and tuning data.
 
-| Symptom | Primary fix |
-|---|---|
-| Model doesn't know our business | Grounding / RAG on enterprise data |
-| Stale facts, recent events | Google Search grounding; RAG over current documents |
-| Invented answers | Grounding / RAG, plus HITL where stakes are high |
-| Skewed outcomes across groups | HITL, curated data, safety settings, ongoing evaluation |
-| Poor results on rare, specialized inputs | Fine-tuning on domain examples; few-shot prompting |
-| Wrong tone, structure, or role | Prompt engineering; fine-tune only if it persists |
+| Symptom                                  | Primary fix                                             |
+| ---------------------------------------- | ------------------------------------------------------- |
+| Model doesn't know our business          | Grounding / RAG on enterprise data                      |
+| Stale facts, recent events               | Google Search grounding; RAG over current documents     |
+| Invented answers                         | Grounding / RAG, plus HITL where stakes are high        |
+| Skewed outcomes across groups            | HITL, curated data, safety settings, ongoing evaluation |
+| Poor results on rare, specialized inputs | Fine-tuning on domain examples; few-shot prompting      |
+| Wrong tone, structure, or role           | Prompt engineering; fine-tune only if it persists       |
 
 - **Sequence:** prompt first, ground next, fine-tune last. HITL is a standing control, not a fallback.
 - **Classic trap:** a chatbot invents details of a current promotion. The fix is grounding. Fine-tuning adds no current knowledge (it fixes knowledge at training time) and does not stop invention.
@@ -45,15 +45,15 @@ This domain covers why foundation models go wrong and what fixes each failure, t
 - **Effective prompt checklist:** instruction, context, format, examples. Weak output usually means one is missing and the model had to guess audience, length, or purpose. Prompting is iterative: review, add a constraint or example, retry.
 - **Sampling settings** (temperature, top-p) tune creativity, but the prompt is still the main steering control.
 
-| Technique | What it is | Use when | Example cue |
-|---|---|---|---|
-| Zero-shot | Instruction only | Familiar tasks (summarize, translate) | "Summarize this transcript in five bullets" |
-| One-shot | One input/output example first | A format easier to show than describe | "Here is a review and our one-line summary; do the next one" |
-| Few-shot | Several examples (commonly two to five) | Nuanced classification, extraction, strict house style | Three tickets labeled Billing / Technical / Account, then a fourth |
-| Role prompting | Give the model a persona | Audience, tone, or viewpoint matters | "You are a financial analyst briefing non-financial executives" |
-| Prompt chaining | Output of one prompt feeds the next | Multi-stage work; inspect results between steps | Summarize each interview, then themes, then recommendations |
-| Chain-of-thought | Ask for step-by-step reasoning before the answer | Calculations, multi-condition decisions, auditable logic | "Work through each year's cost, then compare" |
-| ReAct | Alternate reasoning with actions (search, tool calls) and observations | The task needs live or external information mid-task | "Check current stock, then tell the customer when it ships" |
+| Technique        | What it is                                                             | Use when                                                 | Example cue                                                        |
+| ---------------- | ---------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------ |
+| Zero-shot        | Instruction only                                                       | Familiar tasks (summarize, translate)                    | "Summarize this transcript in five bullets"                        |
+| One-shot         | One input/output example first                                         | A format easier to show than describe                    | "Here is a review and our one-line summary; do the next one"       |
+| Few-shot         | Several examples (commonly two to five)                                | Nuanced classification, extraction, strict house style   | Three tickets labeled Billing / Technical / Account, then a fourth |
+| Role prompting   | Give the model a persona                                               | Audience, tone, or viewpoint matters                     | "You are a financial analyst briefing non-financial executives"    |
+| Prompt chaining  | Output of one prompt feeds the next                                    | Multi-stage work; inspect results between steps          | Summarize each interview, then themes, then recommendations        |
+| Chain-of-thought | Ask for step-by-step reasoning before the answer                       | Calculations, multi-condition decisions, auditable logic | "Work through each year's cost, then compare"                      |
+| ReAct            | Alternate reasoning with actions (search, tool calls) and observations | The task needs live or external information mid-task     | "Check current stock, then tell the customer when it ships"        |
 
 - **Shot rule:** start zero-shot; add examples only when output misses your format. Examples cost tokens, so use the fewest that give consistency.
 - **Role limit:** a persona changes **how** the model talks, not **what it knows**. Calling it a lawyer won't make its legal statements correct. Wrong facts need grounding.
@@ -68,11 +68,11 @@ This domain covers why foundation models go wrong and what fixes each failure, t
 
 - **Grounding:** supply reference material at answer time so the model reads, then responds, instead of recalling. The model turns into a language and reasoning engine on top of facts you own. Payoff: accuracy, freshness, traceability.
 
-| Source | What it is | Example | Answers questions like |
-|---|---|---|---|
-| First-party enterprise data | Created and owned by your organization | Policies, manuals, CRM records, tickets | "What is our refund policy?" |
-| Third-party data | Acquired from providers or partners | Licensed research, market feeds, partner catalogs | "What are industry benchmark rates?" |
-| World data | Public knowledge that changes all the time | Google Search results, news, public websites | "What happened last week?" |
+| Source                      | What it is                                 | Example                                           | Answers questions like               |
+| --------------------------- | ------------------------------------------ | ------------------------------------------------- | ------------------------------------ |
+| First-party enterprise data | Created and owned by your organization     | Policies, manuals, CRM records, tickets           | "What is our refund policy?"         |
+| Third-party data            | Acquired from providers or partners        | Licensed research, market feeds, partner catalogs | "What are industry benchmark rates?" |
+| World data                  | Public knowledge that changes all the time | Google Search results, news, public websites      | "What happened last week?"           |
 
 - **How RAG changes output:** retrieval runs on every query, so answers are more specific, current, and attributable (citations), and hallucinations drop because the model is told to answer from the supplied context and can say it does not know.
 - **RAG vs fine-tuning:** RAG for knowledge that changes, needs citations, or is large and access-controlled. Fine-tuning for stable knowledge, style, and behavior.
@@ -82,13 +82,13 @@ This domain covers why foundation models go wrong and what fixes each failure, t
   - Grounding with Google Search: fresh public web results with source links. Cue "current, public, time-sensitive".
 - **Combine them:** a regulated bank can ground fee and policy answers in first-party data via Agent Search, add licensed third-party rate data, and turn on Google Search grounding for public regulatory news.
 
-| Setting | Controls | Guidance |
-|---|---|---|
-| Token count | Text processed and produced (tokens are small chunks of text) | The unit of cost and capacity; longer prompts and retrieved context cost more |
-| Temperature | Randomness of each token choice | Low = focused, repeatable (facts, grounded Q&A, summaries). High = varied (brainstorming, copy) |
-| Top-p (nucleus sampling) | Samples only from the smallest set of tokens whose probabilities add up to p | Low = few candidates, predictable. High = wider pool |
-| Safety settings | Blocking thresholds per harm category | Tune per audience: strict for a consumer brand bot, looser for an internal moderation review tool |
-| Output length | Max tokens per response | Caps size and cost; a chat widget needing short replies should not allow long ones |
+| Setting                  | Controls                                                                     | Guidance                                                                                          |
+| ------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Token count              | Text processed and produced (tokens are small chunks of text)                | The unit of cost and capacity; longer prompts and retrieved context cost more                     |
+| Temperature              | Randomness of each token choice                                              | Low = focused, repeatable (facts, grounded Q&A, summaries). High = varied (brainstorming, copy)   |
+| Top-p (nucleus sampling) | Samples only from the smallest set of tokens whose probabilities add up to p | Low = few candidates, predictable. High = wider pool                                              |
+| Safety settings          | Blocking thresholds per harm category                                        | Tune per audience: strict for a consumer brand bot, looser for an internal moderation review tool |
+| Output length            | Max tokens per response                                                      | Caps size and cost; a chat widget needing short replies should not allow long ones                |
 
 - **Division of labor:** grounding decides **what** the model knows; sampling settings decide **how** it writes. A typical grounded assistant pairs retrieval with low temperature, suitable safety settings, and an output length that fits the surface.
 - **Vocabulary cues:** "verifiable sources" or "hallucination" = grounding; "last week's announcement" = Google Search grounding; "proprietary documents" = first-party data plus RAG; "less creative, more consistent" = lower temperature or top-p; "response size or cost" = token count and output length; "block harmful content" = safety settings.

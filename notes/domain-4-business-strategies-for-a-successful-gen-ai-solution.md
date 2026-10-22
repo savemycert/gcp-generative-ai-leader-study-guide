@@ -14,11 +14,11 @@ This domain is about running gen AI as a business program: picking and rolling o
   - Types combine, but each added capability adds cost, data needs, and governance work.
 - **Factors that shape the need:**
 
-| Business requirements (what success is) | Technical constraints (what is feasible) |
-|---|---|
-| Target outcome and its users | Data availability and quality; whether it may be used for grounding or tuning |
-| Scale, budget, timeline | Integration with existing systems, latency |
-| Regulatory and industry obligations | Security and access controls, team skills |
+| Business requirements (what success is) | Technical constraints (what is feasible)                                      |
+| --------------------------------------- | ----------------------------------------------------------------------------- |
+| Target outcome and its users            | Data availability and quality; whether it may be used for grounding or tuning |
+| Scale, budget, timeline                 | Integration with existing systems, latency                                    |
+| Regulatory and industry obligations     | Security and access controls, team skills                                     |
 
 - **Exam tip:** find the decisive factor. "Strict data residency" means the constraint drives the answer; "urgent revenue target" means the requirement does.
 - **Choosing a solution:** state the need as an outcome for a named user ("help field technicians find repair procedures faster", not "use gen AI in operations"), map it to a type, then choose build depth: ready-made tool, foundation model grounded in company data, or deeper tuning. Pick the simplest option that meets the requirement.
@@ -33,12 +33,12 @@ This domain is about running gen AI as a business program: picking and rolling o
 - **Pilot properties:** narrow scope (one use case, one user group), success criteria agreed in advance, fixed timeline, deliberate capture of lessons. A pilot that stops a costly mistake counts as a success.
 - **Measuring impact:** set KPIs and record a baseline **before** launch.
 
-| KPI group | Examples |
-|---|---|
-| Efficiency | Handling time, time to first draft, developer velocity, cost per interaction |
-| Quality | Answer accuracy, error rate, CSAT, resolution rate |
-| Adoption | Active users, frequency, share of eligible tasks using the tool |
-| Business outcome | Revenue influenced, conversion, customer and employee retention |
+| KPI group        | Examples                                                                     |
+| ---------------- | ---------------------------------------------------------------------------- |
+| Efficiency       | Handling time, time to first draft, developer velocity, cost per interaction |
+| Quality          | Answer accuracy, error rate, CSAT, resolution rate                           |
+| Adoption         | Active users, frequency, share of eligible tasks using the tool              |
+| Business outcome | Revenue influenced, conversion, customer and employee retention              |
 
 - **ROI** = value delivered vs total cost (platform usage, integration, training, ongoing governance and monitoring). Report hard-to-price benefits alongside hard numbers; do not invent precise figures for them.
 - **Pitfalls, each a skipped step:** technology-first thinking, no readiness check, enterprise-wide launch without a pilot, ignoring change management, governance bolted on late, and measuring nothing or only vanity usage.
@@ -49,14 +49,14 @@ This domain is about running gen AI as a business program: picking and rolling o
 
 - **Secure AI:** protecting training data, models, infrastructure, and inputs and outputs against attack, unauthorized access, and misuse across the whole ML lifecycle. AI systems are valuable targets (data, costly models, influence over decisions) and new ones: a crafted prompt can be enough, with no network breach.
 
-| Threat | Targets | What happens |
-|---|---|---|
-| Data poisoning | Training data | Manipulated examples teach the model wrong behavior |
-| Prompt injection | Deployed model's inputs | Crafted prompts override instructions or pull out confidential data |
-| Model theft (exfiltration) | The model | Files copied, or behavior rebuilt through mass querying |
-| Evasion | The model | Inputs built to be misjudged, slipping past an AI filter |
-| Sensitive data leakage | Interaction | The model reveals confidential or personal information |
-| Misuse | Usage | People use the system outside its governed purpose, no attacker needed |
+| Threat                     | Targets                 | What happens                                                           |
+| -------------------------- | ----------------------- | ---------------------------------------------------------------------- |
+| Data poisoning             | Training data           | Manipulated examples teach the model wrong behavior                    |
+| Prompt injection           | Deployed model's inputs | Crafted prompts override instructions or pull out confidential data    |
+| Model theft (exfiltration) | The model               | Files copied, or behavior rebuilt through mass querying                |
+| Evasion                    | The model               | Inputs built to be misjudged, slipping past an AI filter               |
+| Sensitive data leakage     | Interaction             | The model reveals confidential or personal information                 |
+| Misuse                     | Usage                   | People use the system outside its governed purpose, no attacker needed |
 
 - **Lifecycle view:**
   - Data: access control, provenance and integrity checks, protect sensitive fields.
@@ -73,12 +73,12 @@ This domain is about running gen AI as a business program: picking and rolling o
   - Judge AI risk in its business context.
 - **SAIF benefits:** lower breach and misuse risk, faster adoption on a vetted approach, a defensible compliance position, preserved trust. One-liner: secure by default, across the lifecycle, built on the discipline you already have.
 
-| Google Cloud tool | Purpose | Cue |
-|---|---|---|
-| Secure-by-design infrastructure | Security built into hardware, network, and data centers, with default encryption at rest and in transit | "baseline protection without each team configuring it" |
-| IAM | Who can do what on which resource; least privilege | "limit access to training data or models", "over-permissive grant" |
-| Security Command Center | Central posture management: misconfigurations, vulnerabilities, active threats | "organization-wide view of security posture" |
-| Workload monitoring | Logs, performance, anomaly alerts on running systems | "unusual query patterns", "probing after launch" |
+| Google Cloud tool               | Purpose                                                                                                 | Cue                                                                |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Secure-by-design infrastructure | Security built into hardware, network, and data centers, with default encryption at rest and in transit | "baseline protection without each team configuring it"             |
+| IAM                             | Who can do what on which resource; least privilege                                                      | "limit access to training data or models", "over-permissive grant" |
+| Security Command Center         | Central posture management: misconfigurations, vulnerabilities, active threats                          | "organization-wide view of security posture"                       |
+| Workload monitoring             | Logs, performance, anomaly alerts on running systems                                                    | "unusual query patterns", "probing after launch"                   |
 
 - **Shared responsibility:** Google secures the platform (infrastructure, data centers, default encryption, managed services). The customer configures IAM, governs grounding and tuning data, sets acceptable-use policy, reviews high-stakes output, and acts on findings. An employee with excessive access to training data is a customer IAM gap, not a platform failure.
 
@@ -90,14 +90,14 @@ This domain is about running gen AI as a business program: picking and rolling o
 - **Google's role:** published AI Principles plus safety filters, configurable content controls, evaluation and monitoring tooling, grounding, and model documentation. These **support** responsibility; they never transfer it. The deploying business stays accountable.
 - **Dimensions:**
 
-| Dimension | Meaning | Failure scenario |
-|---|---|---|
-| Transparency | Disclose when AI is used, what data it relies on, its limits | Chatbot presented as a human; AI content unlabeled |
-| Privacy | Protect personal and confidential data in training, prompts, and outputs | Staff paste customer records into prompts; output reveals a person's details |
-| Data quality | Accurate, representative, governed data | Unrepresentative data yields unreliable or skewed output |
-| Fairness | No unjustified differences in treatment across groups | Screening summaries favor one demographic |
-| Accountability | Named owners, governance, human oversight, appeal routes | Nobody owns the use case when it fails |
-| Explainability | Being able to say why an output was produced | A loan decline nobody can justify to the applicant or regulator |
+| Dimension      | Meaning                                                                  | Failure scenario                                                             |
+| -------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| Transparency   | Disclose when AI is used, what data it relies on, its limits             | Chatbot presented as a human; AI content unlabeled                           |
+| Privacy        | Protect personal and confidential data in training, prompts, and outputs | Staff paste customer records into prompts; output reveals a person's details |
+| Data quality   | Accurate, representative, governed data                                  | Unrepresentative data yields unreliable or skewed output                     |
+| Fairness       | No unjustified differences in treatment across groups                    | Screening summaries favor one demographic                                    |
+| Accountability | Named owners, governance, human oversight, appeal routes                 | Nobody owns the use case when it fails                                       |
+| Explainability | Being able to say why an output was produced                             | A loan decline nobody can justify to the applicant or regulator              |
 
 - **Anonymization vs pseudonymization:**
   - Anonymization: identifiers removed or transformed irreversibly; no one, including the holder, can re-identify. Generally outside most privacy regulation. Use when you never need to link back.

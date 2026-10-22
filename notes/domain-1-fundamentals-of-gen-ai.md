@@ -8,14 +8,14 @@ This domain covers the vocabulary of generative AI, how data type and quality sh
 - **Quick test:** if the output is new content, it is generative AI. If the output is a label or a forecast, it is traditional (predictive) ML.
 - **NLP:** the AI field for understanding and producing human language (translation, sentiment, chat). LLMs build on it.
 
-| Term | Means | Exam cue |
-|---|---|---|
-| Foundation model | Large model pretrained on broad data, then adapted to many tasks | "one model reused for summarizing, drafting, classifying" |
-| LLM | Foundation model specialized in language; predicts likely next words | "answer questions, draft, translate, write code" |
-| Multimodal foundation model | One model that handles text, images, audio, and video together | "photo plus report", "recorded meeting to action items" |
-| Diffusion model | Generates images by learning to turn random noise into a picture step by step | "create visuals from a written brief" |
-| Prompt engineering | A person writes better instructions, context, examples, and format | "no training, immediate, anyone can do it" |
-| Prompt tuning | The system learns an optimized prompt from examples; base weights stay frozen | "task-specific behavior, cheaper than fine-tuning" |
+| Term                        | Means                                                                         | Exam cue                                                  |
+| --------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Foundation model            | Large model pretrained on broad data, then adapted to many tasks              | "one model reused for summarizing, drafting, classifying" |
+| LLM                         | Foundation model specialized in language; predicts likely next words          | "answer questions, draft, translate, write code"          |
+| Multimodal foundation model | One model that handles text, images, audio, and video together                | "photo plus report", "recorded meeting to action items"   |
+| Diffusion model             | Generates images by learning to turn random noise into a picture step by step | "create visuals from a written brief"                     |
+| Prompt engineering          | A person writes better instructions, context, examples, and format            | "no training, immediate, anyone can do it"                |
+| Prompt tuning               | The system learns an optimized prompt from examples; base weights stay frozen | "task-specific behavior, cheaper than fine-tuning"        |
 
 - **Customization order (cheapest first):** prompt engineering, then prompt tuning, then fine-tuning. Pick the least training effort that meets the quality bar.
 - **ML approaches:**
@@ -41,14 +41,14 @@ This domain covers the vocabulary of generative AI, how data type and quality sh
 - **Core rule:** model output is capped by data quality. Bad data does not make the model fail loudly; it makes it confidently wrong.
 - **Leader's two questions before picking a model:** does the data this use case needs exist, and can the AI reach it?
 
-| Characteristic | Group | Question it asks | Failure example |
-|---|---|---|---|
-| Completeness | Quality | Is all needed information present? | A third of catalog items lack size and material, so the assistant cannot answer |
-| Consistency | Quality | Is data uniform across systems and time? | One customer stored three ways looks like three people |
-| Relevance | Quality | Does the data fit the problem? | A support bot grounded on old policy answers confidently and wrongly |
-| Availability | Accessibility | Can the AI reach it, on time? | Data stuck in team spreadsheets or silos; stale price lists |
-| Cost | Accessibility | What does acquiring, storing, cleaning, labeling cost? | Paid labeling and licensed datasets blow the budget |
-| Format | Accessibility | Can AI systems process it as-is? | Scanned forms and audio need conversion first |
+| Characteristic | Group         | Question it asks                                       | Failure example                                                                 |
+| -------------- | ------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| Completeness   | Quality       | Is all needed information present?                     | A third of catalog items lack size and material, so the assistant cannot answer |
+| Consistency    | Quality       | Is data uniform across systems and time?               | One customer stored three ways looks like three people                          |
+| Relevance      | Quality       | Does the data fit the problem?                         | A support bot grounded on old policy answers confidently and wrongly            |
+| Availability   | Accessibility | Can the AI reach it, on time?                          | Data stuck in team spreadsheets or silos; stale price lists                     |
+| Cost           | Accessibility | What does acquiring, storing, cleaning, labeling cost? | Paid labeling and licensed datasets blow the budget                             |
+| Format         | Accessibility | Can AI systems process it as-is?                       | Scanned forms and audio need conversion first                                   |
 
 - **Structured data:** fixed schema of rows, columns, typed fields. Examples: POS transactions, CRM records, inventory tables, ledgers, timestamped sensor values. Lives in databases and BigQuery. In gen AI it grounds factual answers (order status, stock level) and powers personalization.
 - **Unstructured data:** no predefined model; meaning sits inside the content. Examples: emails, chats, contracts, reviews, call recordings, photos, video, slide decks. Usually in Cloud Storage and content systems. It is **most** enterprise data, and foundation models are what finally make it usable.
@@ -66,13 +66,13 @@ This domain covers the vocabulary of generative AI, how data type and quality sh
 
 - **Five layers, bottom to top:** infrastructure, models, platforms, agents, applications. Each consumes the one beneath it.
 
-| Layer | Provides | Google examples | Business stance |
-|---|---|---|---|
-| Infrastructure | Compute, networking, storage for training and serving | AI Hypercomputer, TPUs, GPUs, Google data centers | Rent from a cloud provider; almost never build |
-| Models | Foundation models (raw capability, not a product) | Gemini, Gemma, Imagen, Veo | Choose, and tune if justified; do not train from scratch |
-| Platforms | Model access, customization, grounding, deployment, governance | Agent Platform, Model Garden, Google AI Studio | Invest here for custom, data-grounded solutions; needs developers |
-| Agents | Model plus reasoning, memory, and tools that take actions | Custom agents on Agent Platform, Agent Studio, Conversational Agents | Automates ambiguous, language-heavy work; needs more governance |
-| Applications | Products with gen AI already inside them | Gemini Enterprise, Gemini app, Gemini for Google Workspace | Fastest value, no dev team; least differentiation |
+| Layer          | Provides                                                       | Google examples                                                      | Business stance                                                   |
+| -------------- | -------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Infrastructure | Compute, networking, storage for training and serving          | AI Hypercomputer, TPUs, GPUs, Google data centers                    | Rent from a cloud provider; almost never build                    |
+| Models         | Foundation models (raw capability, not a product)              | Gemini, Gemma, Imagen, Veo                                           | Choose, and tune if justified; do not train from scratch          |
+| Platforms      | Model access, customization, grounding, deployment, governance | Agent Platform, Model Garden, Google AI Studio                       | Invest here for custom, data-grounded solutions; needs developers |
+| Agents         | Model plus reasoning, memory, and tools that take actions      | Custom agents on Agent Platform, Agent Studio, Conversational Agents | Automates ambiguous, language-heavy work; needs more governance   |
+| Applications   | Products with gen AI already inside them                       | Gemini Enterprise, Gemini app, Gemini for Google Workspace           | Fastest value, no dev team; least differentiation                 |
 
 - **Trade-off:** lower in the stack = more control and differentiation, more cost and expertise. Higher = faster and cheaper, less customization. This is build vs buy decided per layer.
 - **Typical enterprise pattern:** two layers at once. Applications for broad workforce productivity, plus the platform or agent layer for a few differentiating processes.
@@ -90,12 +90,12 @@ This domain covers the vocabulary of generative AI, how data type and quality sh
 
 - **Two sorting axes:** modality (what it reads and produces) and openness (managed service vs downloadable open weights).
 
-| Model | What it is | Strengths | Scenario cue |
-|---|---|---|---|
-| Gemini | Flagship, natively multimodal model family (managed) | Reasoning across text, images, audio, video, and code; long context; conversation; coding help; agent "brain" | "analyze mixed documents, photos, and a call recording", "customer assistant" |
-| Gemma | Lightweight open model family that shares research roots with Gemini | Open weights, self-host or run on devices, deep fine-tuning, low running cost | "run on-premises", "keep data in our environment", "on-device", "open model" |
-| Imagen | Text-to-image model, also edits images | Photorealism, follows the prompt closely, background changes and scene extension | "product photos in many settings", "campaign visuals without a shoot" |
-| Veo | Video generation from text or a starting image | High-definition clips, control over camera movement and style | "short promo video", "storyboard in motion", "animate a concept" |
+| Model  | What it is                                                           | Strengths                                                                                                     | Scenario cue                                                                  |
+| ------ | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Gemini | Flagship, natively multimodal model family (managed)                 | Reasoning across text, images, audio, video, and code; long context; conversation; coding help; agent "brain" | "analyze mixed documents, photos, and a call recording", "customer assistant" |
+| Gemma  | Lightweight open model family that shares research roots with Gemini | Open weights, self-host or run on devices, deep fine-tuning, low running cost                                 | "run on-premises", "keep data in our environment", "on-device", "open model"  |
+| Imagen | Text-to-image model, also edits images                               | Photorealism, follows the prompt closely, background changes and scene extension                              | "product photos in many settings", "campaign visuals without a shoot"         |
+| Veo    | Video generation from text or a starting image                       | High-definition clips, control over camera movement and style                                                 | "short promo video", "storyboard in motion", "animate a concept"              |
 
 - **Selection order:** first ask what the output modality is (still image = Imagen, moving video = Veo, understanding/reasoning/language/code = Gemini or Gemma). Then ask how much control is needed (open weights, self-hosting, strict data locality = Gemma; strongest capability with no ops burden = Gemini).
 - **Gemma trade-off:** you gain control, customization, and cost efficiency, but you take on the operational work a managed service would do.
